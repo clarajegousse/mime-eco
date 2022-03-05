@@ -1,3 +1,13 @@
+# Data files
+*.fastq.gz
+*.fastq
+*.fasta.gz
+*.fasta
+*.fa.gz
+*.fa
+*.bam
+*.sam
+
 # History files
 .Rhistory
 .Rapp.history
