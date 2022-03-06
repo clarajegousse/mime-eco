@@ -1,4 +1,4 @@
-# 
+#
 # Sunbeam configuration file
 #
 # Defining samples:
@@ -45,11 +45,11 @@ classify:
   kraken_db_fp: ''
 assembly:
   suffix: assembly
-  min_length: 300
+  min_length: 1000
   threads: 4
 annotation:
   suffix: annotation
-  min_contig_len: 500
+  min_contig_len: 1000
   circular_kmin: 10
   circular_kmax: 1000
   circular_min_len: 3500
