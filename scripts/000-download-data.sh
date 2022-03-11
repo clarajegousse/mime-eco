@@ -16,15 +16,14 @@ source /users/home/cat3/.bashrc
 WD=/users/home/cat3/projects/mime-eco
 cd $WD/data
 
-touch list-ftp-url-mg.txt
-for line in `cat PRJEB41565.txt`
+for line in `awk 'BEGIN{OFS = ";"};{print $4, $8, $9}' ../PRJEB41565.txt | grep '0m_'`
 do
-	echo $line | grep "ftp" | grep "HI.4967" | grep "\_0m\_" | sed -e 's/;/\n/' >> list-ftp-url-mg.txt
-done
+	R1=$( echo $line | cut -f 2 -d ';')
+	R2=$( echo $line | cut -f 3 -d ';')
 
-cd data
-for url in `cat list-ftp-url-mg.txt`
-do
-	echo $url
-	wget $url
+	echo $R1
+	wget $R1
+
+	echo $R2
+	wget $R2
 done
