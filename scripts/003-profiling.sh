@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH --job-name=download-marine-mg
+#SBATCH --job-name=mapping
 #SBATCH -p normal
 #SBATCH --time=2-00:00:00
 #SBATCH --mail-type=ALL
