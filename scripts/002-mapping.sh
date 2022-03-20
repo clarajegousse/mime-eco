@@ -23,16 +23,16 @@ NUM_THREADS=12
 cd $CONTIGS_DIR
 FILES=$CONTIGS_DIR/*.fa
 
-for file in $FILES
-do
-	sample=$(basename "$file" | cut -f 1 -d "-")
-	bowtie2-build $file $MAPDIR/$sample
-done
+#for file in $FILES
+#do
+#	sample=$(basename "$file" | cut -f 1 -d "-")
+#	bowtie2-build $file $MAPDIR/$sample
+#done
 
 
 for file in $FILES
 do
-	sample=$(basename "$file" | cut -f 1 -d "-")
+	sample=$(basename "$file" | cut -f 1 -d ".")
 echo $sample
 echo '''#!/bin/bash
 #SBATCH --job-name='$sample'-bowtie2
