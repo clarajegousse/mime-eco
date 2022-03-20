@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH --job-name=download-marine-mg
+#SBATCH --job-name=make-anvio-db
 #SBATCH -p normal
 #SBATCH --time=2-00:00:00
 #SBATCH --mail-type=ALL
@@ -28,5 +28,5 @@ do
 	new_name=$(echo $file | cut -f 1,2 -d "-")
 	# echo $file $new_name
 	anvi-script-reformat-fasta $file -o $new_name.fa -l 1000 --simplify-names
-	anvi-gen-contigs-database -f $new_name.fa -o $new_name.db
+	anvi-gen-contigs-database -f $new_name.fa -o $new_name.db -T 12
 done
