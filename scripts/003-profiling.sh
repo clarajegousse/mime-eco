@@ -26,8 +26,8 @@ for db in $CDBs
 do
 	sample=$(basename "$db" | cut -f 1 -d ".")
 	#anvi-run-hmms -c $sample.db -T 12
-	anvi-run-ncbi-cogs -c $sample.db -T 12
-	#anvi-profile -i $MAPDIR/$sample'.bam' -c $CONTIGS_DIR/$sample'.db' -o $PROFILES_DIR/$sample
+	#anvi-run-ncbi-cogs -c $sample.db -T 12
+	anvi-profile -i $MAPDIR/$sample'.bam' -c $CONTIGS_DIR/$sample'.db' -o $PROFILES_DIR/$sample
 	# anvi-export-gene-calls -c $new_name.db -o $new_name'-gene-calls.txt' --gene-caller prodigal
 	# anvi-export-gene-coverage-and-detection -c $file -o $new_name
 	# anvi-get-sequences-for-gene-calls -c $file -o $new_name'-gene.fasta'
